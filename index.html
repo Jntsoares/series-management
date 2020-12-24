@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css">
+
+    <title>Series Management</title>
+</head>
+<body>
+
+        <main>
+            <div class="container-fluid header">
+                <h1 class="text-center display-3 uppercase">minhas séries</h1>
+                <p class="text-center mt-3">Simples sistema de acompanhamento de séries para controle do seu nível de nerdice.</p>
+                
+                <div class="form mt-5 col-sm-12">
+                    <form id="insert-record">
+                        <div class="form-group">
+                            <label for="nameSerie" class="uppercase">nome</label>
+                            <input type="text" class="form-control" id="nameSerie" name="nameSerie" placeholder="Nome da série">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="seasons" class="uppercase">temporadas</label>
+                                <input type="text" class="form-control "id="seasons" name="seasons" placeholder="Nº de Temporadas">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="eps" class="uppercase">Episódios</label>
+                                <input type="text" class="form-control "id="eps" name="eps" placeholder="Nº de Episódios">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="watchEps" class="uppercase">Episódios assistidos</label>
+                                <input type="text" class="form-control "id="watchEps" name="watchEps" placeholder="Nº de Episódios Assistidos">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary uppercase col-md-2 mt-3 bold">Enviar</button>
+                    </form>
+                    
+
+                </div>
+
+                <div class="mt-5 col-md-12 col-sm-12">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col" class="uppercase text-center">id</th>
+                                <th scope="col" class="uppercase text-center">nome</th>
+                                <th scope="col" class="uppercase text-center">temporadas</th>
+                                <th scope="col" class="uppercase text-center">total de episódios</th>
+                                <th scope="col" class="uppercase text-center">episódios assistidos</th>
+                                <th scope="col" class="uppercase text-center">progresso</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-series">
+                            <tr class="series">
+                                <td scope="row" class="uppercase text-center info-id">1</td>
+                                <td scope="row" class="uppercase text-center info-nome">DARK</td>
+                                <td scope="row" class="uppercase text-center info-temp">3</td>
+                                <td scope="row" class="uppercase text-center info-total-ep">26</td>
+                                <td scope="row" class="uppercase text-center info-eps">18</td>
+                                <td scope="row" class="uppercase text-center info-progresso">
+                                    <div class="progress" >
+                                    <div class="progress-bar bg-success text-center" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div></td>
+                            </tr>
+                            <tr class="series">
+                                <td scope="row" class="uppercase text-center info-id">2</td>
+                                <td scope="row" class="uppercase text-center info-nome">MALHAÇÃO</td>
+                                <td scope="row" class="uppercase text-center info-temp">20</td>
+                                <td scope="row" class="uppercase text-center info-total-ep">320</td>
+                                <td scope="row" class="uppercase text-center info-eps">278</td>
+                                <td scope="row" class="uppercase text-center info-progresso">
+                                    <div class="progress" >
+                                    <div class="progress-bar bg-success text-center" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>  
+        </main>
+    
+
+
+
+    <script src="./assets/progress.js"></script>
+    <script src="./assets/form.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+</body>
+</html>

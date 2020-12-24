@@ -1,0 +1,22 @@
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+ .header{
+    margin-top: 40px;
+ }
+
+ .uppercase{
+     text-transform: uppercase;
+ }
+
+ .bold{
+     font-weight: 900;
+ }
+
+ button{
+    letter-spacing: 2px;
+ }
+
+
+ 
