@@ -30,6 +30,16 @@ button.addEventListener('click', function(event){
 
     var progressTd = document.createElement('td');
     progressTd.className = 'uppercase text-center info-progresso';
+    progressTd.id = 'calc-progress';
+
+    var progressDiv = document.createElement('div');
+    progressDiv.className = 'progress';
+    
+
+    var progressBar = document.createElement('div');
+    progressBar.className = 'progress-bar bg-success text-center';
+
+
 
     idTd.textContent = 3
     nameTd.textContent = name;
@@ -38,7 +48,6 @@ button.addEventListener('click', function(event){
     watchEpsTd.textContent = watchEps;
     progressTd.textContent = name;
 
-
     serieTr.appendChild(idTd);
     serieTr.appendChild(nameTd);
     serieTr.appendChild(seasonsTd);
@@ -46,9 +55,15 @@ button.addEventListener('click', function(event){
     serieTr.appendChild(watchEpsTd);
     serieTr.appendChild(progressTd);
 
+    // var progress = document.querySelector('#calc-progress');
+
+// progress.appendChild(progressDiv);
+
     var table = document.querySelector('#table-series');
 
     table.appendChild(serieTr);
+
+ 
 
 });
 
