@@ -41,8 +41,19 @@ function createTr(serie){
     var idTd = document.createElement('td');
     idTd.classList.add('uppercase', 'text-center', 'info-id');
 
+    var infoProgresso = document.querySelector('.info-progresso');
+
     var progressBar = document.createElement('div');
-    progressBar.classList.add('progress-bar', 'bg-success', 'text-center');
+    progressBar.classList.add('progress');
+
+    infoProgresso.appendChild(progressBar);
+
+    var progressResult = document.createElement('div');
+    progressResult.classList.add('progress-bar', 'bg-success', 'text-center');
+
+    progressBar.appendChild(progressResult);
+
+    
 
     idTd.textContent = 3
  
