@@ -4,66 +4,64 @@ button.addEventListener('click', function(event){
     event.preventDefault();
 
     var form = document.querySelector('#insert-record');
+    // Extraindo informações do form
+    var serie = captureData(form);
 
-    var name = form.nameSerie.value;
-    var seasons = form.seasons.value;
-    var eps = form.eps.value;
-    var watchEps = form.watchEps.value;
+    // Cria a Tr e a Td da série
+    var serieTr = createTr(serie);
 
-    var serieTr = document.createElement('tr');
-    serieTr.className ='series';
-
-    var idTd = document.createElement('td');
-    idTd.className = 'uppercase text-center info-id';
-
-    var nameTd = document.createElement('td');
-    nameTd.className = 'uppercase text-center info-nome';
-
-    var seasonsTd = document.createElement('td');
-    seasonsTd.className = 'uppercase text-center info-temp';
-    
-    var epsTd = document.createElement('td');
-    epsTd.className = 'uppercase text-center info-total-ep';
-
-    var watchEpsTd = document.createElement('td');
-    watchEpsTd.className = 'uppercase text-center info-eps';
-
-    var progressTd = document.createElement('td');
-    progressTd.className = 'uppercase text-center info-progresso';
-    progressTd.id = 'calc-progress';
-
-    var progressDiv = document.createElement('div');
-    progressDiv.className = 'progress';
-    
-
-    var progressBar = document.createElement('div');
-    progressBar.className = 'progress-bar bg-success text-center';
-
-
-
-    idTd.textContent = 3
-    nameTd.textContent = name;
-    seasonsTd.textContent = seasons;
-    epsTd.textContent = eps;
-    watchEpsTd.textContent = watchEps;
-    progressTd.textContent = name;
-
-    serieTr.appendChild(idTd);
-    serieTr.appendChild(nameTd);
-    serieTr.appendChild(seasonsTd);
-    serieTr.appendChild(epsTd);
-    serieTr.appendChild(watchEpsTd);
-    serieTr.appendChild(progressTd);
-
-    // var progress = document.querySelector('#calc-progress');
-
-// progress.appendChild(progressDiv);
-
+    //Adicionando a serie na table
     var table = document.querySelector('#table-series');
 
     table.appendChild(serieTr);
 
- 
+    form.reset();
 
 });
+
+
+function captureData (form){
+    
+    var serie = {
+        name: form.nameSerie.value,
+        seasons: form.seasons.value,
+        eps: form.eps.value,
+        watchEps: form.watchEps.value,
+        progress: calcProgress(form.watchEps.value, form.eps.value) + '%'
+    }
+    
+    return serie;
+} 
+
+function createTr(serie){
+
+    var serieTr = document.createElement('tr');
+    serieTr.classList.add('series');
+
+    var idTd = document.createElement('td');
+    idTd.classList.add('uppercase', 'text-center', 'info-id');
+
+    var progressBar = document.createElement('div');
+    progressBar.classList.add('progress-bar', 'bg-success', 'text-center');
+
+    idTd.textContent = 3
+ 
+    serieTr.appendChild(idTd);
+    serieTr.appendChild(createTd(serie.name, 'info-nome', 'text-center', 'uppercase'));
+    serieTr.appendChild(createTd(serie.seasons, 'info-temp', 'text-center', 'uppercase'));
+    serieTr.appendChild(createTd(serie.eps, 'info-total-ep', 'text-center', 'uppercase'));
+    serieTr.appendChild(createTd(serie.watchEps, 'info-eps', 'text-center', 'uppercase'));
+    serieTr.appendChild(createTd(serie.progress, 'info-progresso', 'text-center', 'uppercase'));
+
+    return serieTr;
+
+}
+
+function createTd(dado, classe, classe1, classe2){
+    var td = document.createElement('td');
+    td.textContent = dado;
+    td.classList.add(classe, classe1, classe2);
+
+    return td;
+}
 

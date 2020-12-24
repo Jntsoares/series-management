@@ -13,15 +13,23 @@ for (var index = 0; index < seriesProgress.length; index++) {
     var tdProgresso = progress.querySelector('.info-progresso');
     var progresso = tdProgresso.textContent;
 
-    progresso = (eps * 100) / total;
-
-
+    progresso = calcProgress(eps, total);
 
     var barProgress = progress.querySelector(".progress-bar").style.width=progresso.toFixed(0) + "%";
 
     var tdContent = progress.querySelector('.progress-bar');
     tdContent.textContent = progresso.toFixed(0) + "%";
+
     
 }
 
 
+function calcProgress(eps, total){
+    var progresso = 0;
+
+    progresso = (eps * 100) / total;
+
+
+
+    return progresso;
+}
